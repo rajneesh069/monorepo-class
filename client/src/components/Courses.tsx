@@ -69,31 +69,60 @@ export default function Courses() {
     return <LinearProgress />;
   } else {
     return (
-      <Grid container margin={"1%"} spacing={2}>
-        {courses?.map((course) => {
-          return (
-            <Grid key={uuidv4()} item>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {course.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {course.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    {course.price}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          );
-        })}
-      </Grid>
+      <div
+        style={{
+          height: "100vh",
+          backgroundImage:
+            "url(https://astroncollege.org/wp-content/uploads/2020/01/courses.jpg)",
+          maxWidth: "100%",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backdropFilter: "blur(4px)",
+            backgroundColor: "rgba(0, 0, 0, 0)",
+          }}
+        ></div>
+        <Grid
+          padding={"2%"}
+          position={"absolute"}
+          zIndex={10}
+          container
+          spacing={2}
+        >
+          {courses?.map((course) => {
+            return (
+              <Grid key={uuidv4()} item>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {course.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {course.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      {course.price}
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </div>
     );
   }
 }

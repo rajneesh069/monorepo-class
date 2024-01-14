@@ -11,9 +11,24 @@ export default function Landing() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        backgroundImage: "url(https://www.questpond.com/img/2.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
       }}
     >
-      <div style={{ order: 0, marginRight: "2%" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backdropFilter: "blur(4px)",
+          backgroundColor: "rgba(0, 0, 0, 0)",
+        }}
+      ></div>
+      <div style={{ position: "absolute", zIndex: 10 }}>
         <Typography variant="h2" color={"greenyellow"}>
           Website
         </Typography>
@@ -34,14 +49,6 @@ export default function Landing() {
         >
           Courses
         </Button>
-      </div>
-      <div style={{ order: 1 }}>
-        <img
-          src="https://www.questpond.com/img/2.png"
-          style={{ background: "none" }}
-          height={200}
-          width={300}
-        />
       </div>
     </div>
   );

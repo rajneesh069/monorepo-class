@@ -8,7 +8,6 @@ export default function Appbar() {
       <div
         style={{
           display: "flex",
-          backgroundColor: "#eee",
           maxWidth: "100%",
           justifyContent: "space-between",
         }}
