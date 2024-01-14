@@ -10,7 +10,7 @@ export default function Landing() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "90vh",
         backgroundImage: "url(https://www.questpond.com/img/2.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",

@@ -10,6 +10,7 @@ export default function Appbar() {
           display: "flex",
           maxWidth: "100%",
           justifyContent: "space-between",
+          margin: 0,
         }}
       >
         <div style={{ order: 0 }}>

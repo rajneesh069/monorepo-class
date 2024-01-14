@@ -4,6 +4,7 @@ export type Course = {
   description: string;
   price: string;
   published: boolean;
+  _id: string;
 };
 
 export interface Atom<T> {

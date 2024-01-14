@@ -5,7 +5,9 @@ export const allCoursesSelector = selector({
   key: "allCoursesSelector",
   get: ({ get }) => {
     const state = get(allCoursesState);
-    return state.courses;
+    if (state.courses) {
+      return state.courses;
+    }
   },
 });
 

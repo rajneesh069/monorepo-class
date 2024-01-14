@@ -18,15 +18,18 @@ import {
   LinearProgress,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-type Course = {
+export type Course = {
   title: string;
   description: string;
   price: string;
   published: boolean;
+  _id: string;
 };
 
 export default function Courses() {
+  const navigate = useNavigate();
   const setCourses = useSetRecoilState(allCoursesState);
   const courses = useRecoilValue(allCoursesSelector);
   const isCoursesLoading = useRecoilValue(isCoursesLoadingSelector);
@@ -71,7 +74,7 @@ export default function Courses() {
     return (
       <div
         style={{
-          height: "100vh",
+          height: "94.8vh",
           backgroundImage:
             "url(https://astroncollege.org/wp-content/uploads/2020/01/courses.jpg)",
           maxWidth: "100%",
@@ -115,6 +118,15 @@ export default function Courses() {
                   <CardActions>
                     <Button size="small" color="primary">
                       {course.price}
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        navigate("/courses/" + course._id);
+                      }}
+                      size="small"
+                      color="primary"
+                    >
+                      Edit
                     </Button>
                   </CardActions>
                 </Card>
