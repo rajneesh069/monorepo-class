@@ -43,7 +43,7 @@ export default function Courses() {
           },
         });
         if (response) {
-          console.log(response.data.courses);
+          console.log(response);
           setCourses({
             isCoursesLoading: false,
             courses: response.data.courses,
