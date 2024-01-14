@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export type Course = {
+type Course = {
   title: string;
   description: string;
   price: string;
